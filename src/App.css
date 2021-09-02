@@ -1,7 +1,13 @@
-.App {
-  text-align: center;
+.app-wrapper {
+  display: grid;
+  width: 1200px;
+  margin: 0 auto;
+  grid-template-areas: 
+  "hd hd hd"
+  "nav main main";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
 }
-h1 {
-  text-align: center;
-  text-decoration: dashed;
-}
+
+

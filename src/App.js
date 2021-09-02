@@ -1,14 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
-   <>
-   <header>
-     <img src="https://pbs.twimg.com/profile_images/1063925348205821958/DlGcxdOl.jpg" />
-   </header>
-   
-   </>
+   <div className="app-wrapper">
+     <Header/>
+     <Navbar/>
+     <Profile/>
+    </div>
   );
 }
 
