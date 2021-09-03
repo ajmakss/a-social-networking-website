@@ -1,13 +1,17 @@
 .nav {
     grid-area: nav;
     background: red;
-  
-  }
+
+}
 
 .nav__links {
     list-style: none;
 }
+
 .nav__link {
     text-decoration: none;
     color: white;
+}
+.active {
+    color: yellow;
 }
