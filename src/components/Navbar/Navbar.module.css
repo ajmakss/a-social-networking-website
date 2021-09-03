@@ -1,17 +1,43 @@
 .nav {
     grid-area: nav;
-    background: red;
-
+    padding: 5px 13px;
+    position: fixed;
+    top: 62px;
 }
 
 .nav__links {
     list-style: none;
+    padding: 0;
+}
+
+.nav__links li {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4px;
 }
 
 .nav__link {
+    width: 272px;
+    height: 26px;
     text-decoration: none;
-    color: white;
+    color: #585757;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 500;
+    height: 25px;
+    padding: 10px 12px;
+
+}
+.nav__link:hover {
+    background: #eeeeee;
+    border-radius: 8px;
 }
 .active {
-    color: yellow;
+    background-color: rgba(42, 65, 232, 0.07);
+    color: #2a41e8;
+    border-radius: 8px;
+}
+.icon {
+    width: 26px;
+    height: 26px;
 }

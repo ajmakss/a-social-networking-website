@@ -1,14 +1,16 @@
 .app-wrapper {
     display: grid;
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
     grid-template-areas: "hd hd hd" "nav main main";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 310px 1fr;
     grid-gap: 10px;
+    background: #f9fafb;
+    position: relative;
 }
 
 .app-content {
     grid-area: main;
-    background: yellow;
+    padding-left: 10px;
 }

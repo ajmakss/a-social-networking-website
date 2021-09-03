@@ -5,7 +5,7 @@ import s from './Header.module.css';
 const Header = () => {
     return (
         <header className={s.header}>
-        <img src="https://pbs.twimg.com/profile_images/1063925348205821958/DlGcxdOl.jpg" />
+        <img src="http://demo.foxthemes.net/socialitev2.1/assets/images/logo.png" />
       </header>
     )
 }
