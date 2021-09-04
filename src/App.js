@@ -9,20 +9,21 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
-    <div className="app-wrapper">
-      <Header />
-      <Navbar />
-      <div className="app-content">
-        <Route path="/profile" component={Profile}/>
-        <Route path="/dialogs" component={Dialogs}/>
-        <Route path="/news" component={News}/>
-        <Route path="/music" component={Music}/>
-        <Route path="/setting" component={Setting}/>
+      <div className="app-wrapper">
+        <Header />
+        <Navbar />
+        <div className="app-content">
+          <Route path="/profile" render={() => <Profile postsData={props.postsData} />} />
+          <Route path="/dialogs" render={() => <Dialogs dialogsData={props.dialogsData}
+            messagesData={props.messagesData} />} />
+          <Route path="/news" component={News} />
+          <Route path="/music" component={Music} />
+          <Route path="/setting" component={Setting} />
+        </div>
       </div>
-    </div>
     </BrowserRouter>
   );
 }
