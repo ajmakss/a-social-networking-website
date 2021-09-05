@@ -1,5 +1,5 @@
 .messageItem {
-    height: 49px;
+    min-height: 49px;
     max-width: 886px;
     display: flex;
     align-items: center;
@@ -13,7 +13,6 @@
 
 .message__avatar img {
     height: 100%;
-    width: 100%;
     object-fit: cover;
     border-radius: 100%;
 }

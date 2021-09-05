@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
-import MessageSendForm from './MessageSend/MessageSendForm';
+import MessageSendForm from './MessageSendForm/MessageSendForm';
 import DialogsHeader from './DialogsHeader/DialogsHeader';
 import MessagesHeader from './MessagesHeader/MessagesHeader';
 
@@ -21,11 +21,11 @@ const Dialogs = (props) => {
                 </div>
             </div>
             <div className={s.messages}>
-               <MessagesHeader/>
+                <MessagesHeader />
                 <div className={s.messages__items}>
                     {messagesElements}
-                    <MessageSendForm />
                 </div>
+                <MessageSendForm />
             </div>
         </div>
     )
