@@ -1,0 +1,56 @@
+a {
+    text-decoration: none;
+}
+.dialog__item {
+    width: 339px;
+    height: 73px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 73px;
+    background: #fff;
+    padding: 17px 25px;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+.dialog__item:hover {
+    background: #fafafa;
+}
+.dialog__avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.dialog__avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.dialog__headline {
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialog__headline h5 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23px;
+    color: #333333;
+}
+
+.dialog__headline span {
+    font-size: 13px;
+    color: #666666;
+}
+
+.dialog__descr p {
+    color: #888888;
+    margin: 0;
+}
+.active__dialog {
+    background: #fafafa;
+}

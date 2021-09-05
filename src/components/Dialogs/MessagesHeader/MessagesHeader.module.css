@@ -1,0 +1,27 @@
+.messages__header {
+    width: 100%;
+    height: 77px;
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 0 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+
+.messages__header h4 {
+    font-size: 15px;
+    color: #333;
+    padding: 6px 0;
+    margin: 0;
+    font-weight: 600;
+}
+
+.messages__header span {
+    font-size: 13px;
+    line-height: 19;
+    color: #ef4444;
+}

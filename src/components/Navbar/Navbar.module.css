@@ -1,16 +1,41 @@
 .nav {
     grid-area: nav;
-    padding: 5px 13px;
+    padding: 5px 5px 5px 10px;
     position: fixed;
     top: 62px;
     background: #f9fafb;
+    box-sizing: border-box;
+
 }
 
 .nav__links {
     list-style: none;
     padding: 0;
+    overflow-y: scroll;
+}
+.nav__links {
+    max-height: 70vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.nav__links:hover {
+    overflow-y: auto;
 }
 
+.nav__links::-webkit-scrollbar {
+    width: 5px;
+}
+
+.nav__links::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+}
+
+.nav__links::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #333;
+}
 .nav__links li {
     display: flex;
     justify-content: flex-start;
