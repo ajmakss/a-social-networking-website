@@ -7,9 +7,8 @@ const Navbar = () => {
   return (
     <nav className={s.nav}>
       <ul className={s.nav__links}>
-        <li>
-          <NavLink to="/profile" className={s.nav__link} activeClassName={s.active}> Profile</NavLink>
-        </li>
+        <li> <NavLink to="/profile" className={s.nav__link} activeClassName={s.active}> Profile</NavLink> </li>
+        <li><NavLink to="/users" className={s.nav__link} activeClassName={s.active}>Users</NavLink></li>
         <li><NavLink to="/dialogs" className={s.nav__link} activeClassName={s.active}>Messages</NavLink></li>
         <li><NavLink to="/news" className={s.nav__link} activeClassName={s.active} >News</NavLink></li>
         <li><NavLink to="/music" className={s.nav__link} activeClassName={s.active} >Music</NavLink></li>
