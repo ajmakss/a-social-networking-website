@@ -8,6 +8,7 @@ let initialState = {
 
     ],
     postText: 'it-camasutra',
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -28,17 +29,19 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 postText: action.text,
             };
+        case 'SET_USER_PROFILE':
+            return {
+                ...state,
+                profile: action.profile
+            };
         default:
             return state;
 
     }
 }
-export const addNewPostActionCreator = () => ({ type: 'ADD-NEW-POST' });
-export const postOnChangeActionCreator = (text) => {
-    return {
-        type: 'UPDATE-POST-TEXT',
-        text: text
-    }
-}
+export const addPost = () => ({ type: 'ADD-NEW-POST' });
+export const updatePost = (text) => ({ type: 'UPDATE-POST-TEXT', text });
+export const setUserProfile = (profile) => ({ type: 'SET_USER_PROFILE', profile });
+
 
 export default profileReducer;

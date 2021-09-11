@@ -8,6 +8,7 @@
     height: 65px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .header img {
     height: 33px;

@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    console.log(props.profile);
     return (
         <div className={s.user__profile}>
             <div className={s.profile_banner}>
@@ -11,10 +12,11 @@ const ProfileInfo = () => {
 
             <div className={s.profile_content}>
                 <div className={s.profile_avatar}>
-                    <img src="https://motorhome.ee/wp-content/uploads/2020/01/blank-profile-picture-973460_1280-e1523978675847.png" alt="profile icon" />
+                    <img src={props.profile.photos.large} alt="profile icon" />
                 </div>
                 <div className={s.profile_info}>
-                    <h1>Josephine Williams</h1>
+                    <h1>{props.profile.fullName}</h1>
+                    <span>{props.profile.aboutMe}</span>
                 </div>
             </div>
         </div>

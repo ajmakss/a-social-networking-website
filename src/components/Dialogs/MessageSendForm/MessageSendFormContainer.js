@@ -1,5 +1,5 @@
 import React from "react";
-import { sendNewMessageActionCreactor, updateMessageTextActionCreactor } from '../../../redux/dialogs-reducer';
+import { sendNewMessage, updateMessageText } from '../../../redux/dialogs-reducer';
 import MessageSendForm from "./MessageSendForm";
 import { connect } from 'react-redux';
 
@@ -9,18 +9,8 @@ let mapStateToProps = (state) => {
         state: state.dialogsPage
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        sendNewMessage: () => {
-            dispatch(sendNewMessageActionCreactor());
-        },
-        updateMessageText: (message) => {
-            dispatch(updateMessageTextActionCreactor(message));
-        }
-    }
-}
 
 
-const MessageSendFormContainer = connect(mapStateToProps, mapDispatchToProps)(MessageSendForm)
+const MessageSendFormContainer = connect(mapStateToProps, {sendNewMessage, updateMessageText})(MessageSendForm)
 
 export default MessageSendFormContainer;
