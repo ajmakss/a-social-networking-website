@@ -12,7 +12,8 @@ const ProfileInfo = (props) => {
 
             <div className={s.profile_content}>
                 <div className={s.profile_avatar}>
-                    <img src={props.profile.photos.large} alt="profile icon" />
+                    <img src={props.profile.photos.large ? props.profile.photos.large 
+                        : 'https://motorhome.ee/wp-content/uploads/2020/01/blank-profile-picture-973460_1280-e1523978675847.png' } alt="profile icon" />
                 </div>
                 <div className={s.profile_info}>
                     <h1>{props.profile.fullName}</h1>

@@ -7,7 +7,7 @@ let initialState = {
         { id: 1, message: 'Hi, its my first post', likesCount: 42 },
 
     ],
-    postText: 'it-camasutra',
+    postText: '',
     profile: null
 };
 
