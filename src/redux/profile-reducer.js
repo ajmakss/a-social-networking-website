@@ -1,4 +1,6 @@
 
+import {profileAPI} from '../api/api';
+
 let initialState = {
     postsData: [
         { id: 1, message: 'I am learning React', likesCount: 5 },
@@ -43,5 +45,14 @@ export const addPost = () => ({ type: 'ADD-NEW-POST' });
 export const updatePost = (text) => ({ type: 'UPDATE-POST-TEXT', text });
 export const setUserProfile = (profile) => ({ type: 'SET_USER_PROFILE', profile });
 
+export const getProfile = (userId) => {
 
+    return (dispatch) => {
+
+        profileAPI.getProfile(userId)
+        .then(resp => {
+            dispatch(setUserProfile(resp.data));
+        })
+    }
+}
 export default profileReducer;
