@@ -58,7 +58,7 @@ const usersReducer = (state = initialState, action) => {
                 isFollowingProcess: action.isFetching 
                 ? [...state.isFollowingProcess, action.userId]
                 : state.isFollowingProcess.filter(id => id !== action.userId)
-            }
+            };
         default:
             return state;
     }
@@ -71,6 +71,7 @@ export const setCurrentPage = (currentPage) => ({type: 'SET_CURRENT_PAGE', curre
 export const setTotalCount = (totalCount) => ({type: 'SET_TOTAL_COUNT', totalCount});
 export const toggleIsFetching = (isFetching) => ({type: 'TOGGLE_IS_FETCHING', isFetching});
 export const toggleIsFollowingProcess = (isFetching, userId) => ({type: 'TOGGLE_IS_FOLLOWING_PROCESS', isFetching, userId});
+
 
 
 
@@ -88,10 +89,7 @@ export const getUsers = (currentPage, pageSize) => {
      }
 }
 
-export const userUnFollow = (userId) => {
-
-    return  (dispatch) => {
-       
+export const userUnFollow = (userId) => (dispatch) => {
         dispatch(toggleIsFollowingProcess(true, userId))
 
         userAPI.unfollow(userId).then(data => {
@@ -101,11 +99,8 @@ export const userUnFollow = (userId) => {
             dispatch(toggleIsFollowingProcess(false, userId))
         })
      }
-}
 
-export const userFollow = (userId) => {
-
-    return  (dispatch) => {
+export const userFollow = (userId) => (dispatch) => {
        
         dispatch(toggleIsFollowingProcess(true, userId))
 
@@ -116,5 +111,5 @@ export const userFollow = (userId) => {
             dispatch(toggleIsFollowingProcess(false, userId))
         })
      }
-}
+
 export default usersReducer;

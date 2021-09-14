@@ -1,4 +1,5 @@
 import React from 'react';
+import SmallAvatar from '../../../common/SmallAvatar/SmallAvatar';
 import s from './Post.module.css';
 
 const Post = (props) => {
@@ -7,10 +8,11 @@ const Post = (props) => {
     <div className={s.postItem}>
       <div className={s.post__header}>
         <div className={s.post__headline}>
-          <div className={s.post__avatar}>
+          <SmallAvatar photo={props.profile.photos.small}/>
+          {/* <div className={s.post__avatar}>
             <img src={props.profile.photos.large ? props.profile.photos.small 
                         : 'https://motorhome.ee/wp-content/uploads/2020/01/blank-profile-picture-973460_1280-e1523978675847.png'}  alt="profile icon" />
-          </div>
+          </div> */}
           <div className={s.post__headerDescr}>
             <a href="#">{props.profile.fullName}</a>
             <div className={s.post__date}>
