@@ -15,9 +15,12 @@
     justify-content: space-between;
 }
 
+.form {
+    width: 90%;
+}
 .addPost__textarea {
     height: 25px;
-    width: 90%;
+    width: 95%;
     border: none;
     border-radius: 20px;
     background: #f3f4f6;

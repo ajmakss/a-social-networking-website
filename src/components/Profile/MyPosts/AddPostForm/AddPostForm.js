@@ -6,7 +6,7 @@ import {requiredField, maxLengthCreator} from '../../../../validators/validators
 
 const PostForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={s.form}> 
              <Field component='textarea' name="postText" 
              className={s.addPost__textarea} placeholder="What is your mind?" 
              validate={[requiredField]}/>

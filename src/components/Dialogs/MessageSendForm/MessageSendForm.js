@@ -7,7 +7,7 @@ import {requiredField, maxLengthCreator} from '../../../validators/validators';
 const MessageSendForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={s.messages__send}>
-            <Field component={TextArea} name="messageText" 
+            <Field component='textarea' name="messageText" 
             type="text"  placeholder="Enter your message" />
             <button type="submit">Send</button>
         </form>

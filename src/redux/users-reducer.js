@@ -93,8 +93,8 @@ export const userUnFollow = (userId) => (dispatch) => {
     dispatch(toggleIsFollowingProcess(true, userId))
 
     userAPI.unfollow(userId)
-        .then(data => {
-            if (data.resultCode === 0) {
+        .then(resp => {
+            if (resp.data.resultCode === 0) {
                 dispatch(unfollow(userId))
             }
             dispatch(toggleIsFollowingProcess(false, userId))
@@ -106,8 +106,8 @@ export const userFollow = (userId) => (dispatch) => {
     dispatch(toggleIsFollowingProcess(true, userId))
 
     userAPI.follow(userId)
-    .then(data => {
-        if (data.resultCode === 0) {
+    .then(resp => {
+        if (resp.data.resultCode === 0) {
             dispatch(follow(userId))
         }
         dispatch(toggleIsFollowingProcess(false, userId))
