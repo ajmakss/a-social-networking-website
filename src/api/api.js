@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import { reduxForm } from "redux-form";
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -25,6 +26,9 @@ export const authAPI = {
     auth() {
         return instance.get(`auth/me`)
     },
+    login(data) {
+        return instance.post('auth/login', {data})
+    }
 }
 export const profileAPI = {
     getUser(userId) {

@@ -1,25 +1,34 @@
 import React from "react";
+import { reduxForm, Field } from "redux-form";
 import SmallAvatar from "../../../common/SmallAvatar/SmallAvatar";
 import s from './AddPostForm.module.css';
 
+
+const PostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+             <Field component="textarea" name="postText" className={s.addPost__textarea} placeholder="What is your mind?" />
+            <button className={s.addPost__btn} >Add post</button>
+        </form >
+    )
+}
+
+let ReduxPostForm = reduxForm({
+    form: 'post'
+})(PostForm);
+
 const AddPostForm = (props) => {
-    let newPost = React.createRef();
 
-    const onAddNewPost = () => {
-        props.addPost();
+    const onSubmit = (data) => {
+        props.addPost(data.postText)
     };
 
-    const onPostChange = () => {
-        let text = newPost.current.value;
-        props.updatePost(text);
-    };
     return (
         <div className={s.addPostForm}>
             <div className={s.addPost__wrapper}>
-                <SmallAvatar photo={props.profile.photos.small } />
-                <textarea className={s.addPost__textarea} ref={newPost} onChange={onPostChange} value={props.postText} placeholder="What is your mind?" />
+                <SmallAvatar photo={props.profile.photos.small} />
+              <ReduxPostForm onSubmit={onSubmit}/>
             </div>
-            <button className={s.addPost__btn} onClick={onAddNewPost}>Add post</button>
         </div>
     )
 }

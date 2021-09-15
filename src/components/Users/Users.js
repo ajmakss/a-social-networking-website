@@ -36,7 +36,7 @@ const Users = (props) => {
                     <div>
                         {u.followed
                             ? <button disabled={props.isFollowingProcess.some(id => id === u.id)}
-                             className={s.btn__unfollow} onClick={() => props.userFollow(u.id)}
+                             className={s.btn__unfollow} onClick={() => props.userUnFollow(u.id)}
                             > Unfollow</button>
                             : <button disabled={props.isFollowingProcess.some(id => id === u.id)} 
                             className={s.btn__follow} onClick={() => props.userFollow(u.id)}

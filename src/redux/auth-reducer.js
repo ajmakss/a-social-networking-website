@@ -20,7 +20,7 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const loginUser = () => async (dispatch) => {
+export const authUser = () => async (dispatch) => {
        await authAPI.auth()
             .then(resp => {
                 if (resp.data.resultCode === 0) {
@@ -30,6 +30,7 @@ export const loginUser = () => async (dispatch) => {
                 console.log(resp.data)
             })
     }
+
 export const setUserData = (userId, email, login) => ({ type: 'SET_USER_DATA', data: { userId, email, login } });
 
 

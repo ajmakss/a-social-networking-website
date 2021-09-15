@@ -23,38 +23,26 @@ let initialState = {
         { id: 9, message: 'Have you seen this film?' },
         { id: 10, message: 'Hi, how are you?' },
     ],
-    messageText: 'Hello its me',
 }
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD-NEW-MESSAGE':
-
             let newMessage = {
                 id: 11,
-                message: state.messageText,
+                message: action.messageText,
             };
             return {
                 ...state,
                 messageText: '',
                 messagesData: [...state.messagesData, newMessage]
             };
-        case 'UPDATE-MESSAGE-TEXT':
-            return {
-                ...state,
-                messageText: action.text
-            };
         default:
             return state;
     }
 }
 
-export const sendNewMessage = () => ({ type: 'ADD-NEW-MESSAGE' });
-export const updateMessageText = (message) => {
-    return {
-        type: 'UPDATE-MESSAGE-TEXT',
-        text: message
-    }
-};
+export const sendNewMessage = (messageText) => ({ type: 'ADD-NEW-MESSAGE', messageText });
+
 
 export default dialogsReducer;

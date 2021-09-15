@@ -32,7 +32,6 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     isLogin: state.auth.isLogin,
-    status: state.profilePage.status
 });
 
 

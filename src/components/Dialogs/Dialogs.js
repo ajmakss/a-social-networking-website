@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
-import MessageSendFormContainer from './MessageSendForm/MessageSendFormContainer';
+import ReduxMessageSendForm from './MessageSendForm/MessageSendForm';
 import DialogsHeader from './DialogsHeader/DialogsHeader';
 import MessagesHeader from './MessagesHeader/MessagesHeader';
 
@@ -11,6 +11,9 @@ const Dialogs = (props) => {
     let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} id={d.id} />);
     let messagesElements = props.state.messagesData.map(m => <MessageItem message={m.message} id={m.id} />);
 
+    const onSubmit = (data) => {
+        props.sendNewMessage(data.messageText)
+    }
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs__content}>
@@ -24,7 +27,7 @@ const Dialogs = (props) => {
                 <div className={s.messages__items}>
                     {messagesElements}
                 </div>
-                <MessageSendFormContainer />
+                <ReduxMessageSendForm onSubmit={onSubmit}/>
             </div>
         </div>
     )
