@@ -1,0 +1,32 @@
+
+.formControl{
+    position: relative;
+
+}
+
+.formControl.error textarea  {
+    border: 1px solid rgb(248, 48, 48)
+}
+.formControl.error span {
+   color: white
+
+}
+.formControl.error input  {
+    border: 1px solid rgb(248, 48, 48)
+    
+}
+.warningIcon {
+  width: 20px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+
+}
+
+.warningText {
+    position: absolute;
+    border-radius: 6px;
+    padding: 5px 10px;
+    background: rgb(248, 48, 48);
+    
+}

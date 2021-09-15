@@ -1,13 +1,15 @@
 import React from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, reset } from "redux-form";
 import SmallAvatar from "../../../common/SmallAvatar/SmallAvatar";
 import s from './AddPostForm.module.css';
-
+import {requiredField, maxLengthCreator} from '../../../../validators/validators';
 
 const PostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-             <Field component="textarea" name="postText" className={s.addPost__textarea} placeholder="What is your mind?" />
+             <Field component='textarea' name="postText" 
+             className={s.addPost__textarea} placeholder="What is your mind?" 
+             validate={[requiredField]}/>
             <button className={s.addPost__btn} >Add post</button>
         </form >
     )
@@ -19,8 +21,9 @@ let ReduxPostForm = reduxForm({
 
 const AddPostForm = (props) => {
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, dispatch) => {
         props.addPost(data.postText)
+        dispatch(reset("post"))
     };
 
     return (

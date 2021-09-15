@@ -5,14 +5,16 @@ import MessageItem from './MessageItem/MessageItem'
 import ReduxMessageSendForm from './MessageSendForm/MessageSendForm';
 import DialogsHeader from './DialogsHeader/DialogsHeader';
 import MessagesHeader from './MessagesHeader/MessagesHeader';
+import { reset } from 'redux-form';
 
 
 const Dialogs = (props) => {
     let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} id={d.id} />);
     let messagesElements = props.state.messagesData.map(m => <MessageItem message={m.message} id={m.id} />);
 
-    const onSubmit = (data) => {
-        props.sendNewMessage(data.messageText)
+    const onSubmit = (data, dispatch) => {
+        props.sendNewMessage(data.messageText);
+        dispatch(reset("message"))
     }
     return (
         <div className={s.dialogs}>
