@@ -23,3 +23,15 @@
    .header__text {
      margin-right: 50px;
    }
+
+   .login {
+    margin-right: 10px;
+    font-weight: bold;
+   }
+   .log__btn {
+     width: 60px;
+     height: 30px;
+     font-size: 12px;
+     text-align: center;
+     cursor: pointer;
+   }

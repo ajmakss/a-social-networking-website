@@ -1,4 +1,3 @@
-
 .form {
     width: 400px;
     height: 320px;
@@ -12,12 +11,14 @@
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
 }
+
 h1 {
     color: #333333;
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 24px;
 }
+
 input {
     width: 400px;
     height: 44px;
@@ -31,14 +32,15 @@ input {
     box-sizing: border-box;
     line-height: 48px;
     margin: 8px auto 12px;
-    
 }
+
 label, .checkbox {
     font-size: 15px;
     line-height: 22px;
     color: #666666;
     margin-bottom: 8px;
 }
+
 button {
     width: 400px;
     height: 38px;
@@ -50,4 +52,26 @@ button {
     text-align: center;
     font-weight: bold;
     color: #fff;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox input {
+    width: 20px;
+    margin: 0 10px 0 0;
+}
+
+.commonError {
+    background: rgb(248, 48, 48);
+    color: white;
+    border-radius: 5px 5px 0 0 ;
+    padding: 5px 10px;
+    height: 25px;
+    margin-bottom: 10px;
+    text-align: center;
 }

@@ -52,6 +52,6 @@ export default compose(
     {follow, unfollow, setTotalCount,
     toggleIsFollowingProcess, getUsers, 
     userUnFollow, userFollow}),
-    // withAuthRedirect
+    withAuthRedirect
     )(UsersContainer)
 
