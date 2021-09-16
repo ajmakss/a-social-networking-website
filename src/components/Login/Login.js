@@ -11,14 +11,14 @@ const LoginForm = (props) => {
     return (
         <form   onSubmit={props.handleSubmit}>
             
-            <label for="email" className={s.label}>Email</label>
-            <Field placeholder="email" component={Input} 
-            name="email" id="email"
+            <label htmlFor="email" className={s.label}>Email: <i>olegmaltewic@gmail.com</i></label>
+            <Field placeholder="email (copy the value from above)" component={Input} 
+            name="email" id="email" 
             validate={[requiredField]} />
 
-            <label for="password" className={s.label}>Password</label>
-            <Field placeholder="password" component={Input}
-             name="password" id="password" type="password"
+            <label htmlFor="password" className={s.label}>Password: <i>password</i></label>
+            <Field placeholder="password (copy the value from above)" component={Input}
+             name="password" id="password" type="password" value="free"
              validate={[requiredField]}/>
             <div className={s.checkbox}>
                 <Field type="checkbox" component="input" name="rememberMe"/> Remember me

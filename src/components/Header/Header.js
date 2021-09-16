@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import s from './Header.module.css';
 
 const Logout = (props) => {
 
   const onLogout = () => {
-    props.logout();
+    props.logout()
   }
   return (
     <div className={s.logout__wrapper}>
