@@ -23,7 +23,7 @@ function App(props) {
           <Route path="/users" render={() => <UsersContainer />} />
           <Route path="/dialogs" render={() => <DialogsContainer />} />
           <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
+          <Route path="/videos" component={Music} />
           <Route path="/setting" component={Setting} />
         </div>
       </div>

@@ -1,18 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
-
+import NavBarItem from './NavBarItem/NavBarItem';
+import profileIcon from '../../photo/NavBarIcons/profile.svg';
+import dialogs from '../../photo/NavBarIcons/dialogs.svg';
+import news from '../../photo/NavBarIcons/news.svg';
+import setting from '../../photo/NavBarIcons/setting.svg';
+import users from '../../photo/NavBarIcons/users.svg';
+import videos from '../../photo/NavBarIcons/videos.svg';
 
 const Navbar = () => {
   return (
     <nav className={s.nav}>
       <ul className={s.nav__links}>
-        <li> <NavLink to="/profile" className={s.nav__link} activeClassName={s.active}> Profile</NavLink> </li>
-        <li><NavLink to="/users" className={s.nav__link} activeClassName={s.active}>Users</NavLink></li>
-        <li><NavLink to="/dialogs" className={s.nav__link} activeClassName={s.active}>Messages</NavLink></li>
-        <li><NavLink to="/news" className={s.nav__link} activeClassName={s.active} >News</NavLink></li>
-        <li><NavLink to="/music" className={s.nav__link} activeClassName={s.active} >Music</NavLink></li>
-        <li><NavLink to="/setting" className={s.nav__link} activeClassName={s.active} >Setting</NavLink></li>
+        <NavBarItem to={"/profile"} icon={profileIcon} text={"Profile"}/>
+        <NavBarItem to={"/users"} icon={users} text={"Users"}/>
+        <NavBarItem to={"/dialogs"} icon={dialogs} text={"Messages"}/>
+        <NavBarItem to={"/news"} icon={news} text={"News"}/>
+        <NavBarItem to={"/videos"} icon={videos} text={"Music"}/>
+        <NavBarItem to={"/setting"} icon={setting} text={"Setting"}/>
       </ul>
     </nav>
   )
