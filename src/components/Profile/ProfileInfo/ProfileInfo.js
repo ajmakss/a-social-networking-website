@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus/ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 import banner from '../../../photo/banner.jpg'
 
 const ProfileInfo = (props) => {
@@ -19,7 +19,7 @@ const ProfileInfo = (props) => {
                 <div className={s.profile_info}>
                     <h1>{props.profile.fullName}</h1>
                     <span>{props.profile.aboutMe}</span>
-                    <ProfileStatus status={props.status}  updateProfileStatus={props.updateProfileStatus}/>
+                    <ProfileStatusWithHooks status={props.status}  updateProfileStatus={props.updateProfileStatus}/>
                 </div>
             </div>
         </div>
