@@ -1,0 +1,17 @@
+.user__nav {
+    margin: 20px 0px;
+}
+
+.user__navlink {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ccc;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.user__navlink_active {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+}

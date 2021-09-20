@@ -77,41 +77,40 @@ export const toggleIsFollowingProcess = (isFetching, userId) => ({ type: 'TOGGLE
 
 export const getUsers = (currentPage, pageSize) => {
 
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toggleIsFetching(true));
 
-        userAPI.getUsers(currentPage, pageSize).then(data => {
-            dispatch(toggleIsFetching(false));
-            dispatch(setUsers(data.items));
-            dispatch(setTotalCount(100));
-            dispatch(setCurrentPage(currentPage));
-        })
+        let data = await userAPI.getUsers(currentPage, pageSize);
+        dispatch(toggleIsFetching(false));
+        dispatch(setUsers(data.items));
+        dispatch(setTotalCount(100));
+        dispatch(setCurrentPage(currentPage));
+
     }
 }
 
-export const userUnFollow = (userId) => (dispatch) => {
-    dispatch(toggleIsFollowingProcess(true, userId))
 
-    userAPI.unfollow(userId)
-        .then(resp => {
-            if (resp.data.resultCode === 0) {
-                dispatch(unfollow(userId))
-            }
-            dispatch(toggleIsFollowingProcess(false, userId))
-        })
+const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
+    dispatch(toggleIsFollowingProcess(true, userId))
+    let resp = await apiMethod(userId);
+
+    if (resp.data.resultCode === 0) {
+        dispatch(actionCreator(userId))
+    }
+    dispatch(toggleIsFollowingProcess(false, userId))
+}
+export const userUnFollow = (userId) => async (dispatch) => {
+    let apiMethod = userAPI.unfollow.bind(userAPI);
+    let actionCreator = unfollow;
+    followUnfollowFlow(dispatch, userId, apiMethod, actionCreator)
+
 }
 
-export const userFollow = (userId) => (dispatch) => {
+export const userFollow = (userId) => async (dispatch) => {
+    let apiMethod = userAPI.follow.bind(userAPI);
+    let actionCreator = follow;
+    followUnfollowFlow(dispatch, userId, apiMethod, actionCreator)
 
-    dispatch(toggleIsFollowingProcess(true, userId))
-
-    userAPI.follow(userId)
-    .then(resp => {
-        if (resp.data.resultCode === 0) {
-            dispatch(follow(userId))
-        }
-        dispatch(toggleIsFollowingProcess(false, userId))
-    })
 }
 
 export default usersReducer;

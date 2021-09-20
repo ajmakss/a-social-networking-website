@@ -1,23 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Paginator from "./Paginator/Paginator";
 import s from './Users.module.css';
 
 const Users = (props) => {
-
-    let pageCount = Math.ceil(props.totalCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pageCount; i++) {
-        pages.push(i)
-    }
-
     return (
         <div>
-            <div className={s.user__nav}>
-                {pages.map(p => {
-                    return <span className={`${s.user__navlink} ${props.currentPage === p ? s.user__navlink_active : '' }`}
-                        onClick={() => props.onPageChange(p)}> {p}</span>
-                })}
-            </div>
+          <Paginator totalCount={props.totalCount}  pageSize={props.pageSize} 
+           onPageChange={ props.onPageChange} currentPage={props.currentPage}/>
             {
                 props.users.map(u => <div key={u.id} className={s.user}>
                     <div className={s.user__content}>

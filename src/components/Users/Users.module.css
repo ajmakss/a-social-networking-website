@@ -9,23 +9,6 @@
     box-shadow: 1px 2px 3px 1px rgba(102, 102, 102, 0.1);
 }
 
-.user__nav {
-    margin: 20px 0px;
-}
-
-.user__navlink {
-    font-size: 18px;
-    font-weight: 500;
-    color: #ccc;
-    padding-bottom: 20px;
-    cursor: pointer;
-}
-
-.user__navlink_active {
-    font-size: 18px;
-    font-weight: 500;
-    color: #666;
-}
 
 .user__content {
     display: flex;
